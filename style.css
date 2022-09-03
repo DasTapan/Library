@@ -5,9 +5,63 @@ body {
     padding: 0;
 }
 
-*,
-::before,
-::after {
+* {
     box-sizing: border-box;
 }
+
 /* UA reset ends  */
+
+/* my style begins here */
+
+.container {
+    background-color: black;
+    height: 100vh;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    align-items: center;
+    /* justify-content: space-around; */
+    overflow-y: scroll;
+}
+
+.container>div {
+    border: 2px solid red;
+    width: 95%;
+}
+
+.heading,
+.button {
+    text-align: center;
+    font-weight: bold;
+}
+
+.heading {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.container>.card-box {
+    flex-basis: 75%;
+    width: 80%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 260px;
+    gap: 20px;
+}
+
+.card {
+    height: 260px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+/* my style ends here */
