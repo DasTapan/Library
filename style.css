@@ -5,7 +5,10 @@
 
 @font-face {
     font-family: 'CourierPrimeSansRegular';
-    src: url('./Fonts/CourierSans/');
+    src: url('./Fonts/CourierSans/Courier\ Prime\ Sans.ttf');
+    src: url('./Fonts/CourierSans/Courier\ Prime\ Sans\ Bold.ttf');
+    src: url('./Fonts/CourierSans/Courier\ Prime\ Sans\ Bold\ Italic.ttf');
+    src: url('./Fonts/CourierSans/Courier\ Prime\ Sans\ Italic.ttf');
 }
 
 /* soft UA reset */
@@ -99,15 +102,20 @@ body {
 }
 
 .content-div {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .content-div .one {
     font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.content-div .two {
+    font-size: 1.25rem;
 }
 
 .content-div.read span:nth-child(2) {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .card #delete-icon {
