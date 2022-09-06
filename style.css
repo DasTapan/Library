@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'CaveStoryRegular';
+    src: url('./Fonts/Cave-Story.ttf');
+}
+
+@font-face {
+    font-family: 'CourierPrimeSansRegular';
+    src: url('./Fonts/CourierSans/');
+}
+
 /* soft UA reset */
 html,
 body {
@@ -12,12 +22,15 @@ body {
 /* UA reset ends  */
 
 /* my style begins here */
+body {
+    font-family: 'CaveStoryRegular', system-ui, -apple-system, Ubuntu, 'Open Sans', sans-serif;
+    font-size: 16px;
+}
 
 .container {
-    background-color: black;
+    /* background-color: black; */
+    background: linear-gradient(#FFFDFD, #FDC3C5);
     height: 100vh;
-
-    color: white;
 
     display: flex;
     flex-direction: column;
@@ -28,24 +41,41 @@ body {
 }
 
 .container>div {
-    border: 2px solid red;
     width: 95%;
 }
 
-.banner-box1,
-.banner-box2 {
-    text-align: center;
-    font-weight: bold;
-}
-
 .banner-box1 {
-    font-size: 35px;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 0.25rem;
     margin-bottom: 20px;
 }
 
 .banner-box2 {
-    font-size: 30px;
+    font-size: 2.5rem;
+    letter-spacing: 0.17rem;
     margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-box2 button {
+    background-image: url('./Icons/plus-icon.png');
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+}
+
+.banner-box2 button:active {
+    transform: translateY(2px);
+}
+
+.banner-box2 button:hover {
+    cursor: pointer;
 }
 
 .container>.card-box {
@@ -62,6 +92,45 @@ body {
     height: 260px;
     border: 1px solid green;
     border-radius: 5px;
+    padding: 12px;
+
+    font-family: 'CourierPrimeSansRegular', system-ui, -apple-system, Ubuntu, sans-serif;
+    position: relative;
+}
+
+.content-div {
+    margin-bottom: 5px;
+}
+
+.content-div .one {
+    font-weight: bold;
+}
+
+.content-div.read span:nth-child(2) {
+    margin-right: 5px;
+}
+
+.card #delete-icon {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border: 0;
+
+    position: absolute;
+    top: 79%;
+    left: 84%;
+
+    background-image: url('./Icons/delete-icon.png');
+    background-size: contain;
+    background-color: transparent;
+}
+
+.card>#delete-icon:hover {
+    cursor: pointer;
+}
+
+.card>#delete-icon:active {
+    transform: translateY(2.5px);
 }
 
 /* my style ends here */
