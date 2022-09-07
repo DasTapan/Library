@@ -51,95 +51,204 @@ const cardBoxDiv = document.querySelector('.card-box');
 console.log(cardBoxDiv);
 
 // run a loop to display the books
-for (let i = 0; i < myLibrary.length; i++) {
-    const card = document.createElement('div');
-    card.classList.add('card')
-    cardBoxDiv.appendChild(card);
+// for (let i = 0; i < myLibrary.length; i++) {
+//     const card = document.createElement('div');
+//     card.classList.add('card')
+//     cardBoxDiv.appendChild(card);
 
-    const contentDivTitle = document.createElement('div');
-    contentDivTitle.classList.add('content-div', 'title');
+//     const contentDivTitle = document.createElement('div');
+//     contentDivTitle.classList.add('content-div', 'title');
 
-    const contentDivAuthor = document.createElement('div');
-    contentDivAuthor.classList.add('content-div', 'author');
+//     const contentDivAuthor = document.createElement('div');
+//     contentDivAuthor.classList.add('content-div', 'author');
 
-    const contentDivPages = document.createElement('div');
-    contentDivPages.classList.add('content-div', 'pages');
+//     const contentDivPages = document.createElement('div');
+//     contentDivPages.classList.add('content-div', 'pages');
 
-    const contentDivRead = document.createElement('div');
-    contentDivRead.classList.add('content-div', 'read');
+//     const contentDivRead = document.createElement('div');
+//     contentDivRead.classList.add('content-div', 'read');
 
-    const contentDivYear = document.createElement('div');
-    contentDivYear.classList.add('content-div', 'year');
+//     const contentDivYear = document.createElement('div');
+//     contentDivYear.classList.add('content-div', 'year');
 
-    const contentDivLanguage = document.createElement('div');
-    contentDivLanguage.classList.add('content-div', 'language');
+//     const contentDivLanguage = document.createElement('div');
+//     contentDivLanguage.classList.add('content-div', 'language');
 
-    card.append(
-        contentDivTitle, contentDivAuthor, contentDivPages,
-        contentDivRead, contentDivYear, contentDivLanguage
-    );
+//     card.append(
+//         contentDivTitle, contentDivAuthor, contentDivPages,
+//         contentDivRead, contentDivYear, contentDivLanguage
+//     );
 
-    // console.table(card.childNodes);
+//     // console.table(card.childNodes);
 
-    const titleDivSpanOne = document.createElement('span');
-    titleDivSpanOne.classList.add('one');
-    const titleDivSpanTwo = document.createElement('span');
-    titleDivSpanTwo.classList.add('two');
-    contentDivTitle.append(titleDivSpanOne, titleDivSpanTwo);
+//     const titleDivSpanOne = document.createElement('span');
+//     titleDivSpanOne.classList.add('one');
+//     const titleDivSpanTwo = document.createElement('span');
+//     titleDivSpanTwo.classList.add('two');
+//     contentDivTitle.append(titleDivSpanOne, titleDivSpanTwo);
 
-    const authorDivSpanOne = document.createElement('span');
-    authorDivSpanOne.classList.add('one');
-    const authorDivSpanTwo = document.createElement('span');
-    authorDivSpanTwo.classList.add('two');
-    contentDivAuthor.append(authorDivSpanOne, authorDivSpanTwo);
+//     const authorDivSpanOne = document.createElement('span');
+//     authorDivSpanOne.classList.add('one');
+//     const authorDivSpanTwo = document.createElement('span');
+//     authorDivSpanTwo.classList.add('two');
+//     contentDivAuthor.append(authorDivSpanOne, authorDivSpanTwo);
 
-    const pageDivSpanOne = document.createElement('span');
-    pageDivSpanOne.classList.add('one');
-    const pageDivSpanTwo = document.createElement('span');
-    pageDivSpanTwo.classList.add('two');
-    contentDivPages.append(pageDivSpanOne, pageDivSpanTwo);
+//     const pageDivSpanOne = document.createElement('span');
+//     pageDivSpanOne.classList.add('one');
+//     const pageDivSpanTwo = document.createElement('span');
+//     pageDivSpanTwo.classList.add('two');
+//     contentDivPages.append(pageDivSpanOne, pageDivSpanTwo);
 
-    const readDivSpanOne = document.createElement('span');
-    readDivSpanOne.classList.add('one');
-    const readDivSpanTwo = document.createElement('span');
-    readDivSpanTwo.classList.add('two');
-    const toggleReadButton = document.createElement('button');
-    toggleReadButton.classList.add('toggle-read')
-    contentDivRead.append(readDivSpanOne, readDivSpanTwo, toggleReadButton);
+//     const readDivSpanOne = document.createElement('span');
+//     readDivSpanOne.classList.add('one');
+//     const readDivSpanTwo = document.createElement('span');
+//     readDivSpanTwo.classList.add('two');
+//     const toggleReadButton = document.createElement('button');
+//     toggleReadButton.classList.add('toggle-read')
+//     contentDivRead.append(readDivSpanOne, readDivSpanTwo, toggleReadButton);
 
-    const yearDivSpanOne = document.createElement('span');
-    yearDivSpanOne.classList.add('one');
-    const yearDivSpanTwo = document.createElement('span');
-    yearDivSpanTwo.classList.add('two');
-    contentDivYear.append(yearDivSpanOne, yearDivSpanTwo);
+//     const yearDivSpanOne = document.createElement('span');
+//     yearDivSpanOne.classList.add('one');
+//     const yearDivSpanTwo = document.createElement('span');
+//     yearDivSpanTwo.classList.add('two');
+//     contentDivYear.append(yearDivSpanOne, yearDivSpanTwo);
 
-    const langDivSpanOne = document.createElement('span');
-    langDivSpanOne.classList.add('one');
-    const langDivSpanTwo = document.createElement('span');
-    langDivSpanTwo.classList.add('two');
-    contentDivLanguage.append(langDivSpanOne, langDivSpanTwo);
+//     const langDivSpanOne = document.createElement('span');
+//     langDivSpanOne.classList.add('one');
+//     const langDivSpanTwo = document.createElement('span');
+//     langDivSpanTwo.classList.add('two');
+//     contentDivLanguage.append(langDivSpanOne, langDivSpanTwo);
 
-    const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id', 'delete-icon');
-    card.appendChild(deleteButton);
+//     const deleteButton = document.createElement('button');
+//     deleteButton.setAttribute('id', 'delete-icon');
+//     card.appendChild(deleteButton);
 
-    // add text to nodes
-    titleDivSpanOne.textContent = 'Title :';
-    titleDivSpanTwo.textContent = 'Harry Potter';
+//     // add text to nodes
+//     titleDivSpanOne.textContent = 'Title :';
+//     titleDivSpanTwo.textContent = 'Harry Potter';
 
-    authorDivSpanOne.textContent = 'Author :';
-    authorDivSpanOne.textContent = 'J K Rowling';
+//     authorDivSpanOne.textContent = 'Author :';
+//     authorDivSpanTwo.textContent = 'J K Rowling';
 
-    pageDivSpanOne.textContent = 'Pages :';
-    pageDivSpanTwo.textContent = '935';
+//     pageDivSpanOne.textContent = 'Pages :';
+//     pageDivSpanTwo.textContent = '935';
 
-    readDivSpanOne.textContent = 'Read Status:';
-    readDivSpanTwo.textContent = 'Read';
-    toggleReadButton.textContent = 'Change';
+//     readDivSpanOne.textContent = 'Read Status:';
+//     readDivSpanTwo.textContent = 'Read';
+//     toggleReadButton.textContent = 'Change';
 
-    yearDivSpanOne.textContent = 'Year :';
-    yearDivSpanTwo.textContent = '2001';
+//     yearDivSpanOne.textContent = 'Year :';
+//     yearDivSpanTwo.textContent = '2001';
 
-    langDivSpanOne.textContent = 'Language :';
-    langDivSpanTwo.textContent = 'English';
+//     langDivSpanOne.textContent = 'Language :';
+//     langDivSpanTwo.textContent = 'English';
+// }
+
+function showBooks() {
+    let title = '',
+        author = '',
+        pages = '',
+        readStatus = '',
+        year = '',
+        language = '';
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        title = myLibrary[i]['Title'];
+        author = myLibrary[i]['Author'];
+        pages = myLibrary[i]['Pages'];
+        readStatus = myLibrary[i]['read status'];
+        language = myLibrary[i]['Language'];
+
+        const card = document.createElement('div');
+        card.classList.add('card')
+        cardBoxDiv.appendChild(card);
+
+        const contentDivTitle = document.createElement('div');
+        contentDivTitle.classList.add('content-div', 'title');
+
+        const contentDivAuthor = document.createElement('div');
+        contentDivAuthor.classList.add('content-div', 'author');
+
+        const contentDivPages = document.createElement('div');
+        contentDivPages.classList.add('content-div', 'pages');
+
+        const contentDivRead = document.createElement('div');
+        contentDivRead.classList.add('content-div', 'read');
+
+        const contentDivYear = document.createElement('div');
+        contentDivYear.classList.add('content-div', 'year');
+
+        const contentDivLanguage = document.createElement('div');
+        contentDivLanguage.classList.add('content-div', 'language');
+
+        card.append(
+            contentDivTitle, contentDivAuthor, contentDivPages,
+            contentDivRead, contentDivYear, contentDivLanguage
+        );
+
+        const titleDivSpanOne = document.createElement('span');
+        titleDivSpanOne.classList.add('one');
+        const titleDivSpanTwo = document.createElement('span');
+        titleDivSpanTwo.classList.add('two');
+        contentDivTitle.append(titleDivSpanOne, titleDivSpanTwo);
+
+        const authorDivSpanOne = document.createElement('span');
+        authorDivSpanOne.classList.add('one');
+        const authorDivSpanTwo = document.createElement('span');
+        authorDivSpanTwo.classList.add('two');
+        contentDivAuthor.append(authorDivSpanOne, authorDivSpanTwo);
+
+        const pageDivSpanOne = document.createElement('span');
+        pageDivSpanOne.classList.add('one');
+        const pageDivSpanTwo = document.createElement('span');
+        pageDivSpanTwo.classList.add('two');
+        contentDivPages.append(pageDivSpanOne, pageDivSpanTwo);
+
+        const readDivSpanOne = document.createElement('span');
+        readDivSpanOne.classList.add('one');
+        const readDivSpanTwo = document.createElement('span');
+        readDivSpanTwo.classList.add('two');
+        const toggleReadButton = document.createElement('button');
+        toggleReadButton.classList.add('toggle-read')
+        contentDivRead.append(readDivSpanOne, readDivSpanTwo, toggleReadButton);
+
+        const yearDivSpanOne = document.createElement('span');
+        yearDivSpanOne.classList.add('one');
+        const yearDivSpanTwo = document.createElement('span');
+        yearDivSpanTwo.classList.add('two');
+        contentDivYear.append(yearDivSpanOne, yearDivSpanTwo);
+
+        const langDivSpanOne = document.createElement('span');
+        langDivSpanOne.classList.add('one');
+        const langDivSpanTwo = document.createElement('span');
+        langDivSpanTwo.classList.add('two');
+        contentDivLanguage.append(langDivSpanOne, langDivSpanTwo);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.setAttribute('id', 'delete-icon');
+        card.appendChild(deleteButton);
+
+        for(let j=0; j<6; j++) {
+            titleDivSpanOne.textContent = 'Title :';
+            titleDivSpanTwo.textContent = title;
+
+            authorDivSpanOne.textContent = 'Author :';
+            authorDivSpanTwo.textContent = author;
+
+            pageDivSpanOne.textContent = 'Pages :';
+            pageDivSpanTwo.textContent = pages;
+        
+            readDivSpanOne.textContent = 'Read Status:';
+            readDivSpanTwo.textContent = readStatus;
+            toggleReadButton.textContent = 'Change';
+        
+            yearDivSpanOne.textContent = 'Year :';
+            yearDivSpanTwo.textContent = year;
+        
+            langDivSpanOne.textContent = 'Language :';
+            langDivSpanTwo.textContent = language;        
+        }
+    }
 }
+
+showBooks();
