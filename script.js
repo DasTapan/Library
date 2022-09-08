@@ -48,6 +48,13 @@ let myLibrary = [
 ];
 
 const cardBoxDiv = document.querySelector('.card-box');
+const bookAddButton = document.querySelector('#add-book');
+const formCloseButton = document.querySelector('.close-button');
+const formContainerDiv = document.querySelector('.form-container');
+const formContainerDivStyle = formContainerDiv.style;
+
+console.log(cardBoxDiv);
+console.log(bookAddButton);
 
 function showBooks() {
     let title = '',
@@ -133,7 +140,7 @@ function showBooks() {
         deleteButton.setAttribute('id', 'delete-icon');
         card.appendChild(deleteButton);
 
-        for(let j=0; j<6; j++) {
+        for (let j = 0; j < 6; j++) {
             titleDivSpanOne.textContent = 'Title :';
             titleDivSpanTwo.textContent = title;
 
@@ -142,18 +149,27 @@ function showBooks() {
 
             pageDivSpanOne.textContent = 'Pages :';
             pageDivSpanTwo.textContent = pages;
-        
+
             readDivSpanOne.textContent = 'Read Status:';
             readDivSpanTwo.textContent = readStatus;
             toggleReadButton.textContent = 'Change';
-        
+
             yearDivSpanOne.textContent = 'Year :';
             yearDivSpanTwo.textContent = year;
-        
+
             langDivSpanOne.textContent = 'Language :';
-            langDivSpanTwo.textContent = language;        
+            langDivSpanTwo.textContent = language;
         }
     }
 }
 
 showBooks();
+
+
+bookAddButton.addEventListener('click', () => {
+    formContainerDivStyle.display = 'block';
+});
+
+formCloseButton.addEventListener('click', () => {
+    formContainerDivStyle.display = 'none';
+});
