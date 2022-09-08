@@ -14,6 +14,41 @@
     <div class="container">
         <div class="banner-box1">Library</div>
         <div class="banner-box2">Add Book<button id="add-book"></button></div>
+        <div class="form-container">
+            <form action="" method="post" class="book-form">
+                <button type="button" class="close-button">X</button>
+                <div class="form-row">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text">
+                </div>
+                <div class="form-row">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text">
+                </div>
+                <div class="form-row">
+                    <label for="pages">Pages</label>
+                    <input id="pages" name="pages" type="text">
+                </div>
+                <div class="form-row">
+                    <label for="lang">Language</label>
+                    <input id="lang" name="lang" type="text">
+                </div>
+                <div class="form-row">
+                    <label for="year">Year</label>
+                    <input id="year" name="year" type="text">
+                </div>
+                <div class="form-row-radio">
+                    <span>Read Status</span>
+                    <label for="yes">Yes</label>
+                    <input id="yes" name="read-status" type="radio" value="Yes">
+                    <label for="no">No</label>
+                    <input id="no" name="read-status" type="radio" value="No">
+                </div>
+                <div class="form-row">
+                    <button type="button">Add</button>
+                </div>
+            </form>
+        </div>
         <div class="card-box">
             <!-- <div class="card">
                 <div class="content-div title">

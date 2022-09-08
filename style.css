@@ -31,6 +31,8 @@ body {
 }
 
 .container {
+    position: relative;
+
     /* background-color: black; */
     background: linear-gradient(#FFFDFD, #FDC3C5);
     height: 100vh;
@@ -43,7 +45,9 @@ body {
     overflow-y: scroll;
 }
 
-.container>div {
+.container .banner-box1,
+.banner-box2,
+.card-box {
     width: 95%;
 }
 
@@ -79,6 +83,116 @@ body {
 
 .banner-box2 button:hover {
     cursor: pointer;
+}
+
+.form-container {
+    /* display: none; */
+    position: absolute;
+    height: 380px;
+    width: 300px;
+    background-color: #DFE1E2;
+    border: 1px solid #758695;
+    padding: 30px 10px 10px;
+    z-index: 1;
+
+    top: 60px;
+}
+
+.book-form {
+    border-radius: 3px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: -25px;
+    left: 257px;
+
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+
+    border-radius: 3px;
+    border: 0;
+    padding: 3px 6px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.close-button:active {
+    transform: translateY(1.8px);
+}
+
+.form-row {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 65%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.form-row label {
+    padding-right: 18px;
+    width: 25%;
+    text-align: right;
+}
+
+.form-row-radio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 35px;
+}
+
+.form-row-radio span {
+    padding-right: 15px;
+}
+
+.form-row-radio input[id='yes'] {
+    margin-right: 20px;
+    accent-color: green;
+}
+
+.form-row-radio input[id='no'] {
+    accent-color: red;
+}
+
+.form-row button[type='button'] {
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+
+    color: #FFFFFF;
+    background-color: #5995DA;
+
+    border: none;
+    border-radius: 3px;
+
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: #76AEED;
+    transform: scale(1.12);
+}
+
+.form-row button:active {
+    background-color: #407FC7;
+    transform: translateY(2.2px);
 }
 
 .container>.card-box {
