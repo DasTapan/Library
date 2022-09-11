@@ -88,19 +88,22 @@ body {
 .form-container {
     display: none;
     position: absolute;
+    font-family: system-ui, -apple-system, Roboto, Ubuntu, sans-serif;
     height: 380px;
     width: 300px;
     background-color: #DFE1E2;
     border: 1px solid #758695;
     padding: 30px 10px 10px;
-    z-index: 1;
 
     top: 60px;
+    z-index: 1;
 }
 
 .book-form {
     border-radius: 3px;
     position: relative;
+
+    font-size: 0.85rem;
 }
 
 .close-button {

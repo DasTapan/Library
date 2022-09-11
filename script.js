@@ -16,45 +16,59 @@ let myLibrary = [
         Year: 1645,
         Language: 'Odia'
 
-    },
-
-    {
-        Title: 'Sridhari Tika',
-        Author: 'Sridhar Swami',
-        Pages: 435,
-        'read status': 'NOT READ',
-        Year: 1245,
-        Language: 'Sanskrut'
-
-    },
-
-    {
-        Title: 'Ramcharit Manas',
-        Author: 'Tulsi Das',
-        Pages: 1020,
-        'read status': 'NOT READ',
-        Year: 1578,
-        Language: 'Abadhi'
-    },
-
-    {
-        Title: 'Kishore Champu',
-        Author: 'Baldeb Rath',
-        Pages: 235,
-        'read status': 'READ',
-        Year: 1812,
-        Language: 'Odia'
     }
+
+    // {
+    //     Title: 'Sridhari Tika',
+    //     Author: 'Sridhar Swami',
+    //     Pages: 435,
+    //     'read status': 'NOT READ',
+    //     Year: 1245,
+    //     Language: 'Sanskrut'
+
+    // },
+
+    // {
+    //     Title: 'Ramcharit Manas',
+    //     Author: 'Tulsi Das',
+    //     Pages: 1020,
+    //     'read status': 'NOT READ',
+    //     Year: 1578,
+    //     Language: 'Abadhi'
+    // },
+
+    // {
+    //     Title: 'Kishore Champu',
+    //     Author: 'Baldeb Rath',
+    //     Pages: 235,
+    //     'read status': 'READ',
+    //     Year: 1812,
+    //     Language: 'Odia'
+    // }
 ];
+
+function Book(title, author, pages, lang, year, readStatus) {
+    this.Title = title;
+    this.Author = author;
+    this.Pages = pages;
+    this['read status'] = readStatus;
+    this.Year = year;
+    this.Language = lang;
+}
+
+function addBookToLibrary(bookDetail) {
+    const newBook = new Book(bookDetail[0], bookDetail[1], bookDetail[2], bookDetail[3], bookDetail[4], bookDetail[5]);
+    myLibrary.push(newBook);
+
+    showBooks();
+}
 
 const cardBoxDiv = document.querySelector('.card-box');
 const bookAddButton = document.querySelector('#add-book');
 const formCloseButton = document.querySelector('.close-button');
 const formContainerDiv = document.querySelector('.form-container');
 const formContainerDivStyle = formContainerDiv.style;
-
-console.log(cardBoxDiv);
-console.log(bookAddButton);
+const formSubmitButton = document.querySelector('.form-submit');
 
 function showBooks() {
     let title = '',
@@ -69,6 +83,7 @@ function showBooks() {
         author = myLibrary[i]['Author'];
         pages = myLibrary[i]['Pages'];
         readStatus = myLibrary[i]['read status'];
+        year = myLibrary[i]['Year'];
         language = myLibrary[i]['Language'];
 
         const card = document.createElement('div');
@@ -163,9 +178,6 @@ function showBooks() {
     }
 }
 
-showBooks();
-
-
 bookAddButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'block';
 });
@@ -173,3 +185,25 @@ bookAddButton.addEventListener('click', () => {
 formCloseButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'none';
 });
+
+formSubmitButton.addEventListener('click', () => {
+    const formDetail = [];
+    const title = document.querySelector('#title').value;
+    formDetail.push(title);
+    const author = document.querySelector('#author').value;
+    formDetail.push(author);
+    const pages = document.querySelector('#pages').value;
+    formDetail.push(pages);
+    const lang = document.querySelector('#lang').value;
+    formDetail.push(lang);
+    const year = document.querySelector('#year').value;
+    formDetail.push(year);
+    const readStatus = document.querySelector('input[name="read-status"]:checked').value;
+    formDetail.push(readStatus);
+
+    console.table(formDetail);
+    //call the function to add book object
+    addBookToLibrary(formDetail);
+});
+
+showBooks();
