@@ -226,3 +226,10 @@ formSubmitButton.addEventListener('click', () => {
 });
 
 callShowBooks(0);
+
+const removeButton = cardBoxDiv.querySelector('#delete-icon');
+console.log(removeButton);
+
+removeButton.addEventListener('click', () => {
+    console.log('aila re aila re');
+});
