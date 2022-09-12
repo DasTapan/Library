@@ -1,14 +1,5 @@
 let myLibrary = [
     {
-        Title: 'Bidagdha Chintamnai',
-        Author: 'A Samantsinghar',
-        Pages: 655,
-        'read status': 'NOT READ',
-        Year: 1534,
-        Language: 'Odia'
-    },
-
-    {
         Title: 'Baidehisa Bilasha',
         Author: 'Upendra Bhanja',
         Pages: 1325,
@@ -16,26 +7,26 @@ let myLibrary = [
         Year: 1645,
         Language: 'Odia'
 
+    },
+
+    {
+        Title: 'Sridhari Tika',
+        Author: 'Sridhar Swami',
+        Pages: 435,
+        'read status': 'NOT READ',
+        Year: 1245,
+        Language: 'Sanskrut'
+
+    },
+
+    {
+        Title: 'Ramcharit Manas',
+        Author: 'Tulsi Das',
+        Pages: 1020,
+        'read status': 'NOT READ',
+        Year: 1578,
+        Language: 'Abadhi'
     }
-
-    // {
-    //     Title: 'Sridhari Tika',
-    //     Author: 'Sridhar Swami',
-    //     Pages: 435,
-    //     'read status': 'NOT READ',
-    //     Year: 1245,
-    //     Language: 'Sanskrut'
-
-    // },
-
-    // {
-    //     Title: 'Ramcharit Manas',
-    //     Author: 'Tulsi Das',
-    //     Pages: 1020,
-    //     'read status': 'NOT READ',
-    //     Year: 1578,
-    //     Language: 'Abadhi'
-    // },
 
     // {
     //     Title: 'Kishore Champu',
@@ -196,6 +187,12 @@ function clearAndResetForm() {
     formContainerDivStyle.display = 'none';
 }
 
+function rearrangeMyLibrary(indexPosition) {
+    console.table(myLibrary);
+    myLibrary = myLibrary.filter((element, index) => indexPosition != index);
+    console.table(myLibrary);
+}
+
 bookAddButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'block';
 });
@@ -227,9 +224,14 @@ formSubmitButton.addEventListener('click', () => {
 
 callShowBooks(0);
 
-const removeButton = cardBoxDiv.querySelector('#delete-icon');
-console.log(removeButton);
+const removeButtons = cardBoxDiv.querySelectorAll('#delete-icon');
 
-removeButton.addEventListener('click', () => {
-    console.log('aila re aila re');
-});
+removeButtons.forEach(removeButton => removeButton.addEventListener('click', () => {
+    console.log('aila re aila');
+    let dataIndexNumber = 0;
+    dataIndexNumber = +removeButton.parentNode.getAttribute('data-index-number');
+    console.log(typeof dataIndexNumber);
+
+    rearrangeMyLibrary(dataIndexNumber);
+    // callShowBooks(0);
+}));
