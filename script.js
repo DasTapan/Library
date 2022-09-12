@@ -183,6 +183,18 @@ function callShowBooks(bookPosition) {
     showBook(bookPosition);
 }
 
+function clearAndResetForm() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
+    document.querySelector('#lang').value = '';
+    document.querySelector('#year').value = '';
+    document.querySelector('input[name="read-status"]:checked').checked = false;
+
+    //toggle the popup form visibility
+    // formContainerDivStyle.display = 'none';
+}
+
 bookAddButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'block';
 });
@@ -209,6 +221,7 @@ formSubmitButton.addEventListener('click', () => {
     console.table(formDetail);
     //call the function to add book object
     addBookToLibrary(formDetail);
+    clearAndResetForm();
 });
 
 callShowBooks(0);
