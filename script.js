@@ -233,5 +233,11 @@ removeButtons.forEach(removeButton => removeButton.addEventListener('click', () 
     console.log(typeof dataIndexNumber);
 
     rearrangeMyLibrary(dataIndexNumber);
-    // callShowBooks(0);
+
+    //clean the cardBox
+    while (cardBoxDiv.lastElementChild) {
+        cardBoxDiv.removeChild(cardBoxDiv.lastElementChild);
+    }
+
+    callShowBooks(0);
 }));
