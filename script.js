@@ -89,6 +89,7 @@ function showBook(firstBookPosition) {
 
         const card = document.createElement('div');
         card.classList.add('card')
+        card.setAttribute('data-index-number', i);
         cardBoxDiv.appendChild(card);
 
         const contentDivTitle = document.createElement('div');
@@ -192,7 +193,7 @@ function clearAndResetForm() {
     document.querySelector('input[name="read-status"]:checked').checked = false;
 
     //toggle the popup form visibility
-    // formContainerDivStyle.display = 'none';
+    formContainerDivStyle.display = 'none';
 }
 
 bookAddButton.addEventListener('click', () => {
@@ -218,7 +219,7 @@ formSubmitButton.addEventListener('click', () => {
     const readStatus = document.querySelector('input[name="read-status"]:checked').value;
     formDetail.push(readStatus);
 
-    console.table(formDetail);
+    // console.table(formDetail);
     //call the function to add book object
     addBookToLibrary(formDetail);
     clearAndResetForm();
