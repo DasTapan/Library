@@ -60,7 +60,8 @@ function addBookToLibrary(bookDetail) {
     const newBook = new Book(bookDetail[0], bookDetail[1], bookDetail[2], bookDetail[3], bookDetail[4], bookDetail[5]);
     myLibrary.push(newBook);
 
-    showBooks();
+    let latestIndex = myLibrary.length - 1;
+    callShowBooks(latestIndex);
 }
 
 const cardBoxDiv = document.querySelector('.card-box');
@@ -70,7 +71,7 @@ const formContainerDiv = document.querySelector('.form-container');
 const formContainerDivStyle = formContainerDiv.style;
 const formSubmitButton = document.querySelector('.form-submit');
 
-function showBooks() {
+function showBook(firstBookPosition) {
     let title = '',
         author = '',
         pages = '',
@@ -78,7 +79,7 @@ function showBooks() {
         year = '',
         language = '';
 
-    for (let i = 0; i < myLibrary.length; i++) {
+    for (let i = firstBookPosition; i < myLibrary.length; i++) {
         title = myLibrary[i]['Title'];
         author = myLibrary[i]['Author'];
         pages = myLibrary[i]['Pages'];
@@ -178,6 +179,10 @@ function showBooks() {
     }
 }
 
+function callShowBooks(bookPosition) {
+    showBook(bookPosition);
+}
+
 bookAddButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'block';
 });
@@ -206,4 +211,4 @@ formSubmitButton.addEventListener('click', () => {
     addBookToLibrary(formDetail);
 });
 
-showBooks();
+callShowBooks(0);
