@@ -215,7 +215,9 @@ formSubmitButton.addEventListener('click', () => {
     const year = document.querySelector('#year').value;
     formDetail.push(year);
     const readStatus = document.querySelector('input[name="read-status"]:checked').value;
-    formDetail.push(readStatus);
+    if (readStatus === 'Yes') formDetail.push('READ');
+    if (readStatus === 'No') formDetail.push('NOT READ');
+    // formDetail.push(readStatus);
 
     // console.table(formDetail);
     //call the function to add book object
