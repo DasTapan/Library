@@ -239,6 +239,12 @@ function deleteBook(event) {
         }
 
         callShowBooks(0);
+    } else if (event.target.className === 'toggle-read') {
+        let readToggle = event.target.previousSibling;
+        let readToggleText = readToggle.textContent;
+
+        if (readToggleText === 'READ') readToggle.textContent = 'NOT READ';
+        if (readToggleText === 'NOT READ') readToggle.textContent = 'READ';
     }
 }
 
