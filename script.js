@@ -55,6 +55,7 @@ function addBookToLibrary(bookDetail) {
     callShowBooks(latestIndex);
 }
 
+let removeButtons;
 const cardBoxDiv = document.querySelector('.card-box');
 const bookAddButton = document.querySelector('#add-book');
 const formCloseButton = document.querySelector('.close-button');
@@ -224,20 +225,21 @@ formSubmitButton.addEventListener('click', () => {
 
 callShowBooks(0);
 
-const removeButtons = cardBoxDiv.querySelectorAll('#delete-icon');
+function deleteBook(event) {
+    if (event.target['id'] === 'delete-icon') {
+        console.log('thik dharichi');
 
-removeButtons.forEach(removeButton => removeButton.addEventListener('click', () => {
-    console.log('aila re aila');
-    let dataIndexNumber = 0;
-    dataIndexNumber = +removeButton.parentNode.getAttribute('data-index-number');
-    console.log(typeof dataIndexNumber);
+        let dataIndexNumber = 0;
+        dataIndexNumber = +event.target.parentNode.getAttribute('data-index-number');
 
-    rearrangeMyLibrary(dataIndexNumber);
+        rearrangeMyLibrary(dataIndexNumber);
 
-    //clean the cardBox
-    while (cardBoxDiv.lastElementChild) {
-        cardBoxDiv.removeChild(cardBoxDiv.lastElementChild);
+        while (cardBoxDiv.lastElementChild) {
+            cardBoxDiv.removeChild(cardBoxDiv.lastElementChild);
+        }
+
+        callShowBooks(0);
     }
+}
 
-    callShowBooks(0);
-}));
+cardBoxDiv.addEventListener('click', deleteBook);
