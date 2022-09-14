@@ -173,7 +173,7 @@ body {
     accent-color: red;
 }
 
-.form-row button[type='button'] {
+.form-row button[type='submit'] {
     font-size: 18px;
     font-weight: bold;
     margin: auto;

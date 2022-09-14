@@ -62,6 +62,8 @@ const formCloseButton = document.querySelector('.close-button');
 const formContainerDiv = document.querySelector('.form-container');
 const formContainerDivStyle = formContainerDiv.style;
 const formSubmitButton = document.querySelector('.form-submit');
+const myForm = document.querySelector('.book-form');
+// console.log(myForm);
 
 function showBook(firstBookPosition) {
     let title = '',
@@ -202,7 +204,9 @@ formCloseButton.addEventListener('click', () => {
     formContainerDivStyle.display = 'none';
 });
 
-formSubmitButton.addEventListener('click', () => {
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('thik re hela');
     const formDetail = [];
     const title = document.querySelector('#title').value;
     formDetail.push(title);
