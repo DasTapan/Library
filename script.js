@@ -27,17 +27,9 @@ let myLibrary = [
         Year: 1578,
         Language: 'Abadhi'
     }
-
-    // {
-    //     Title: 'Kishore Champu',
-    //     Author: 'Baldeb Rath',
-    //     Pages: 235,
-    //     'read status': 'READ',
-    //     Year: 1812,
-    //     Language: 'Odia'
-    // }
 ];
 
+//constructor to create book objects
 function Book(title, author, pages, lang, year, readStatus) {
     this.Title = title;
     this.Author = author;
@@ -63,8 +55,8 @@ const formContainerDiv = document.querySelector('.form-container');
 const formContainerDivStyle = formContainerDiv.style;
 const formSubmitButton = document.querySelector('.form-submit');
 const myForm = document.querySelector('.book-form');
-// console.log(myForm);
 
+//run a loop to display books from myLibrary array
 function showBook(firstBookPosition) {
     let title = '',
         author = '',
@@ -85,6 +77,8 @@ function showBook(firstBookPosition) {
         card.classList.add('card')
         card.setAttribute('data-index-number', i);
         cardBoxDiv.appendChild(card);
+
+        //create corresponding divs and append it to card
 
         const contentDivTitle = document.createElement('div');
         contentDivTitle.classList.add('content-div', 'title');
@@ -151,6 +145,8 @@ function showBook(firstBookPosition) {
         deleteButton.setAttribute('id', 'delete-icon');
         card.appendChild(deleteButton);
 
+        //put value in divs
+
         for (let j = 0; j < 6; j++) {
             titleDivSpanOne.textContent = 'Title :';
             titleDivSpanTwo.textContent = title;
@@ -178,6 +174,8 @@ function callShowBooks(bookPosition) {
     showBook(bookPosition);
 }
 
+//reset form after submission
+
 function clearAndResetForm() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
@@ -191,9 +189,8 @@ function clearAndResetForm() {
 }
 
 function rearrangeMyLibrary(indexPosition) {
-    console.table(myLibrary);
+    //create new array excluding the deleted index
     myLibrary = myLibrary.filter((element, index) => indexPosition != index);
-    console.table(myLibrary);
 }
 
 bookAddButton.addEventListener('click', () => {
@@ -205,8 +202,7 @@ formCloseButton.addEventListener('click', () => {
 });
 
 myForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('thik re hela');
+    event.preventDefault(); // prevents default behavior of resetting page after submission
     const formDetail = [];
     const title = document.querySelector('#title').value;
     formDetail.push(title);
@@ -221,19 +217,17 @@ myForm.addEventListener('submit', (event) => {
     const readStatus = document.querySelector('input[name="read-status"]:checked').value;
     if (readStatus === 'Yes') formDetail.push('READ');
     if (readStatus === 'No') formDetail.push('NOT READ');
-    // formDetail.push(readStatus);
 
-    // console.table(formDetail);
     //call the function to add book object
     addBookToLibrary(formDetail);
     clearAndResetForm();
 });
 
+//initial call to display books
 callShowBooks(0);
 
 function deleteBook(event) {
     if (event.target['id'] === 'delete-icon') {
-        console.log('thik dharichi');
 
         let dataIndexNumber = 0;
         dataIndexNumber = +event.target.parentNode.getAttribute('data-index-number');
