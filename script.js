@@ -29,18 +29,20 @@ let myLibrary = [
     }
 ];
 
-//constructor to create book objects
-function Book(title, author, pages, lang, year, readStatus) {
-    this.Title = title;
-    this.Author = author;
-    this.Pages = pages;
-    this['read status'] = readStatus;
-    this.Year = year;
-    this.Language = lang;
+class Book {
+    constructor(title, author, pages, lang, year, readStatus) {
+        this.Title = title;
+        this.Author = author;
+        this.Pages = pages;
+        this.Language = lang;
+        this.Year = year;
+        this['read status'] = readStatus;
+    }
 }
 
 function addBookToLibrary(bookDetail) {
     const newBook = new Book(bookDetail[0], bookDetail[1], bookDetail[2], bookDetail[3], bookDetail[4], bookDetail[5]);
+    console.log(newBook);
     myLibrary.push(newBook);
 
     let latestIndex = myLibrary.length - 1;
